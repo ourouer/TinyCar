@@ -138,12 +138,12 @@ namespace Tinybit {
     }
 
     //% group="Distance Sensor"
-    //% blockId=mbit_ultrasonic_car block="distance sensor value in %unit"
+    //% blockId=mbit_ultrasonic_car block="distance sensor2 value in %unit"
     //% color="#006400"
     //% weight=98
     //% blockGap=10
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function Ultrasonic(unit: PingUnit, maxCmDistance = 500): number {
+    export function Ultrasonic2(unit: PingUnit, maxCmDistance = 500): number {
         // send pulse
         pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
         pins.digitalWritePin(DigitalPin.P16, 0);
