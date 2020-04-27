@@ -4,10 +4,10 @@ const MOTOR = 0x02
 const RGB = 0x01
 
 //% weight=10 color=#006400 icon="\uf1b9" block="Tinybit"
-//% groups='["Motors", "Distance Sensor", "Line Reader","Headlights"]'
+//% groups='["Motors2", "Distance Sensor", "Line Reader","Headlights"]'
 
 namespace Tinybit {
-    export enum Motors {
+    export enum Motors2 {
         //% blockId="LeftMotor" block="LeftMotor"
         LeftMotor = 0,
         //% blockId="RightMotor" block="RightMotor"
@@ -59,19 +59,19 @@ namespace Tinybit {
         pins.i2cWriteBuffer(PWM_ADD, buf);
     }
     //% weight=100
-    //% group="Motors"
+    //% group="Motors2"
     //% blockId=motor_MotorRun block="Set|%index|to|%Direction|at the speed|%speed" 
     //% speed.min=0 speed.max=100
     //% speed.defl=100
     //% index.fieldEditor="gridpicker" index.fieldOptions.columns=2
     //% dir.fieldEditor="gridpicker" dir.fieldOptions.columns=2
-    export function MotorRun(index: Motors, dir: direction, speed: number): void {
+    export function MotorRun(index: Motors2, dir: direction, speed: number): void {
         speed = Math.round(speed * 2.55)
         let buf = pins.createBuffer(5);
         buf[0] = MOTOR;
 
 
-        if (index == Motors.LeftMotor) {
+        if (index == Motors2.LeftMotor) {
             if (dir == direction.forward) {
                 //buf[1] = 0;
                 //buf[2] = 0;
@@ -87,7 +87,7 @@ namespace Tinybit {
             }
 
         }
-        else if (index == Motors.RightMotor) {
+        else if (index == Motors2.RightMotor) {
             if (dir == direction.forward) {
                 buf[1] = speed;
                 //buf[2] = 0;
@@ -102,7 +102,7 @@ namespace Tinybit {
             }
         }
 
-        else if (index == Motors.BothMotors) {
+        else if (index == Motors2.BothMotors) {
             if (dir == direction.forward) {
                 buf[1] = speed;
                 buf[2] = 0;
@@ -122,10 +122,10 @@ namespace Tinybit {
 
     }
     //% weight=98
-    //% group="Motors"
+    //% group="Motors2"
     //% blockId=motor_motorStop block="Stop|%motors"
     //% motors.fieldEditor="gridpicker" motors.fieldOptions.columns=2
-    export function motorStop(motors: Motors): void {
+    export function motorStop(motors: Motors2): void {
         let buf = pins.createBuffer(5);
         buf[0] = MOTOR;
         buf[1] = 0;
