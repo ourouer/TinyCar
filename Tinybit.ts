@@ -4,7 +4,7 @@ const MOTOR = 0x02
 const RGB = 0x01
 
 //% weight=10 color=#006400 icon="\uf1b9" block="Tinybit"
-//% groups='["Motors", "Distance Sensor", "Line Reader","Headlights","Tof"]'
+//% groups='["Motors", "Distance Sensor", "Line Reader","Headlights"]'
 
 namespace Tinybit {
     export enum Motors {
@@ -256,7 +256,7 @@ namespace Tinybit {
     }
 
     //% blockId=ID_Phares block="Phares|value %value"
-    //% group="Tof"
+    //% group="Headlights"
     //% weight=98
     //% blockGap=10
     export function Phares(value: enColor): void {
