@@ -3,10 +3,10 @@ const PWM_ADD = 0x01
 const MOTOR = 0x02
 const RGB = 0x01
 
-//% weight=10 color=#006400 icon="\uf1b9" block="Tinybit"
+//% weight=10 color=#006400 icon="\uf1b9" block="TinyCarTof"
 //% groups='["Motors", "Distance Sensor", "Line Reader","Headlights"]'
 
-namespace Tinybit {
+namespace TinyCarTof {
     export enum Motors {
         //% blockId="LeftMotor" block="LeftMotor"
         LeftMotor = 0,
