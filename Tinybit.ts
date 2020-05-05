@@ -48,6 +48,29 @@ namespace Tinybit {
         white,
         black
     }
+    
+   export enum enColor {
+
+        //% blockId="OFF" block="OFF"
+        OFF = 0,
+        //% blockId="Red" block="Red"
+        Red,
+        //% blockId="Green" block="Green"
+        Green,
+        //% blockId="Blue" block="Blue"
+        Blue,
+        //% blockId="White" block="White"
+        White,
+        //% blockId="Cyan" block="Cyan"
+        Cyan,
+        //% blockId="Pinkish" block="Pinkish"
+        Pinkish,
+        //% blockId="Yellow" block="Yellow"
+        Yellow,
+
+    }    
+    
+    
     function setPwmRGB(red: number, green: number, blue: number): void {
 
         let buf = pins.createBuffer(4);
@@ -238,7 +261,46 @@ namespace Tinybit {
     //% group="Headlights"
     //% weight=98
     //% blockGap=10
-    export function Phares(value: number): void {
+    export function Phares(value: enColor): void {
+ 
+        switch (value) {
+            case enColor.OFF: {
+                setPwmRGB(0, 0, 0);
+                break;
+            }
+            case enColor.Red: {
+                setPwmRGB(255, 0, 0);
+                break;
+            }
+            case enColor.Green: {
+                setPwmRGB(0, 255, 0);
+                break;
+            }
+            case enColor.Blue: {
+                setPwmRGB(0, 0, 255);
+                break;
+            }
+            case enColor.White: {
+                setPwmRGB(255, 255, 255);
+                break;
+            }
+            case enColor.Cyan: {
+                setPwmRGB(0, 255, 255);
+                break;
+            }
+            case enColor.Pinkish: {
+                setPwmRGB(255, 0, 255);
+                break;
+            }
+            case enColor.Yellow: {
+                setPwmRGB(255, 255, 0);
+                break;
+            }
+        }
+    }
+       
+        
+        /*
 
         switch (value) {
             case 0: setPwmRGB(0, 0, 0);   break;
@@ -246,6 +308,6 @@ namespace Tinybit {
             case 2: setPwmRGB(255, 255, 0);   break;
             case 3: setPwmRGB(255, 255, 255);   break;     
             }
-        }
+        }*/
 
 }
