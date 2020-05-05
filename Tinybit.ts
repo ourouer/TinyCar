@@ -234,11 +234,11 @@ namespace Tinybit {
 
     }
 
-//% blockId=iD_TofLihgts block="TofLights|value %value"
+//% blockId=ID_Phares block="Phares|value %value"
     //% group="Headlights"
     //% weight=98
     //% blockGap=10
-    export function TofLights(value: number): void {
+    export function Phares(value: number): void {
 
         switch (value) {
             case 0: setPwmRGB(0, 0, 0);   break;
