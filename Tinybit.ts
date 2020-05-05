@@ -167,35 +167,7 @@ namespace Tinybit {
 
     }
 
-    //% group="Distance Sensor"
-    //% blockId=mbit_ultrasonic_car block="distance sensor TOF value in %unit"
-    //% color="#006400"
-    //% weight=98
-    //% blockGap=10
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function UltrasonicTOF(unit: PingUnit, maxCmDistance = 500): number {
-        // send pulse
-        pins.setPull(DigitalPin.P16, PinPullMode.PullNone);
-        pins.digitalWritePin(DigitalPin.P16, 0);
-        control.waitMicros(2);
-        pins.digitalWritePin(DigitalPin.P16, 1);
-        control.waitMicros(15);
-        pins.digitalWritePin(DigitalPin.P16, 0);
-        // read pulse
-        pins.setPull(DigitalPin.P15, PinPullMode.PullUp);
-
-        let d = pins.pulseIn(DigitalPin.P15, PulseValue.High, maxCmDistance * 42);
-        let dr = Math.round(d / 42);
-        console.log("Distance: " + dr);
-
-        basic.pause(50)
-
-        switch (unit) {
-            case PingUnit.Centimeters: return dr;
-            default: return dr;
-        }
-
-    }
+    
 
     //% weight=89
     //% group="Line Reader"
