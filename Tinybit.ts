@@ -48,7 +48,7 @@ namespace Tinybit {
         white,
         black
     }
-    export enum enColor {
+    /*export enum enColor {
 
     //% blockId="OFF" block="OFF"
     OFF = 0,
@@ -67,7 +67,7 @@ namespace Tinybit {
     //% blockId="Yellow" block="Yellow"
     Yellow,
         
-    } 
+    } */
     
     function setPwmRGB(red: number, green: number, blue: number): void {
 
@@ -254,7 +254,7 @@ namespace Tinybit {
         setPwmRGB(R, G, B);
 
     }
-
+/*
     //% blockId=ID_Phares block="Phares|value %value"
     //% group="Headlights"
     //% weight=98
@@ -295,7 +295,7 @@ namespace Tinybit {
             }
         }
     }
-    
+    */
 }
 
 
