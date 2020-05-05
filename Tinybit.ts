@@ -234,6 +234,19 @@ namespace Tinybit {
 
     }
 
+//% blockId=iD_TofLihgts block="TofLights|value %value"
+    //% group="Headlights"
+    //% weight=98
+    //% blockGap=10
+    export function TofLights(value: number): void {
+
+        switch (value) {
+            case 0: setPwmRGB(0, 0, 0);   break;
+            case 1: setPwmRGB(255, 0, 0);   break;     
+            case 2: setPwmRGB(255, 255, 0);   break;
+            case 3: setPwmRGB(255, 255, 255);   break;     
+            }
+        }
 
 }
 
